@@ -23,7 +23,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 //================
 
 app.use("/", function(req, res) {
-    res.send("Working");
+    res.render("home");
+});
+app.use("/main", function(req, res) {
+    res.render("main");
 });
 
 app.listen(8080, "127.0.0.1", function() {
