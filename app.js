@@ -39,7 +39,7 @@ app.get("/photographs", function(req, res) {
     });
 });
 app.get("/photographs/new", function(req, res) {
-    res.render("new");
+    res.render("form");
 });
 
 app.post("/photographs", function(req, res) {
