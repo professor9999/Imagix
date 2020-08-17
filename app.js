@@ -7,7 +7,8 @@ var mongoose = require("mongoose");
 var passport = require("passport");
 var LocalStratergy = require("passport-local");
 var session = require("express-session");
-//var Photographs = require("./models/photographs");
+var Photograph = require("./models/photographs");
+//const photographs = require("./models/photographs");
 //var Comment = require("./models/comments");
 //var User = require("./models/user");
 //var flash = require('connect-flash');
@@ -28,8 +29,27 @@ app.get("/", function(req, res) {
 app.get("/home", function(req, res) {
     res.render("home");
 });
-app.get("/main", function(req, res) {
-    res.render("main.ejs");
+app.get("/photographs", function(req, res) {
+    Photograph.find({}, function(err, photographs) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("photographs", { photographs: photographs });
+        }
+    });
+});
+app.get("/photographs/new", function(req, res) {
+    res.render("new");
+});
+
+app.post("/photographs", function(req, res) {
+    var name = req.body.name;
+    var image = req.body.image;
+    var description = req.body.descrip;
+    var author = req.params.id;
+    var object = { name: name, descrip: description, img: image, author: author };
+    Photograph.create(object);
+    res.redirect("/photographs");
 });
 
 app.get("/*", function(req, res) {

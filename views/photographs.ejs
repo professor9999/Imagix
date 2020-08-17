@@ -5,7 +5,7 @@
     <title>Imagix</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/photographs.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/main">Home</a>
+                        <a class="nav-link" href="/photographs">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
@@ -52,12 +52,26 @@
                 <h2><i class="fas fa-camera-retro"></i> Carpe Diem</h2>
                 <p>Photography is just another art where an artist puts his thoughts and imaginations on a canvas using his creativity. Hence, photography may not show what reality is, it shows how photogrpaher sees the world or he wants us to see the world.</p>
             </div>
-            <a class="btn btn-primary" href="#"> Add a new photograph</a>
+            <a class="btn btn-primary" href="/photographs/new"> Add a new photograph</a>
         </div>
 
         <div class="container">
             <div class="row">
-
+                <% for(var i=0;i<photographs.length;i++){ %>
+                    <div class="col-md-4 col-sm-6 text-center">
+                        <div class="thumbnail" id="sites">
+                            <div class="camp-images">
+                                <img src="<%= photographs[i].img %>">
+                            </div>
+                            <div class="caption">
+                                <%= photographs[i].name %>
+                            </div>
+                            <p>
+                                <a class="btn btn-sm btn-primary" href="photographs/<%=photographs[i]._id %>">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                    <%    } %>
             </div>
         </div>
     </div>
