@@ -5,7 +5,7 @@
     <title>Imagix</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/campground.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 </head>
 
 <body>
@@ -18,11 +18,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="container-fluid">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Features</a>
+                        <a class="nav-link" href="/main">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
@@ -49,29 +49,14 @@
     <div class="container">
         <div class="jumbotron">
             <div>
-                <h2><i class="fas fa-campground"></i> Carpe Diem</h2>
-                <p>Varirty of campsites have been tagged from various locations on earth</p>
+                <h2><i class="fas fa-camera-retro"></i> Carpe Diem</h2>
+                <p>Photography is just another art where an artist puts his thoughts and imaginations on a canvas using his creativity. Hence, photography may not show what reality is, it shows how photogrpaher sees the world or he wants us to see the world.</p>
             </div>
-            <a class="btn btn-primary" href="/campgrounds/new"> Enter a new campground</a>
+            <a class="btn btn-primary" href="#"> Add a new photograph</a>
         </div>
 
         <div class="container">
             <div class="row">
-                <% for(var i=0;i<campgrounds.length;i++){ %>
-                    <div class="col-md-4 col-sm-6 text-center">
-                        <div class="thumbnail" id="sites">
-                            <div class="camp-images">
-                                <img src="<%= campgrounds[i].img %>">
-                            </div>
-                            <div class="caption">
-                                <%= campgrounds[i].name %>
-                            </div>
-                            <p>
-                                <a class="btn btn-sm btn-primary" href="campgrounds/<%=campgrounds[i]._id %>">More Info</a>
-                            </p>
-                        </div>
-                    </div>
-                    <%    } %>
 
             </div>
         </div>

@@ -22,11 +22,18 @@ app.use(bodyparser.urlencoded({ extended: true }));
 //PRIMARY ROUTES
 //================
 
-app.use("/", function(req, res) {
+app.get("/", function(req, res) {
+    res.redirect("/home");
+});
+app.get("/home", function(req, res) {
     res.render("home");
 });
-app.use("/main", function(req, res) {
-    res.render("main");
+app.get("/main", function(req, res) {
+    res.render("main.ejs");
+});
+
+app.get("/*", function(req, res) {
+    res.send("Error 404 - File not found");
 });
 
 app.listen(8080, "127.0.0.1", function() {
