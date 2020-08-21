@@ -28,8 +28,11 @@ p {
 
 .btn {
     margin-top: 20px;
-    margin-left: 41.5%;
-    margin-right: 10%;
+    margin-left: 45%;
+    padding: 6px 12px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .alert {

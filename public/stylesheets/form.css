@@ -38,5 +38,7 @@ textarea {
 }
 
 #upload {
-    font-size: 12.5px;
+    font-size: 14px;
+    width: fit-content;
+    padding-right: 26%;
 }

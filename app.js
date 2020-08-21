@@ -8,6 +8,7 @@ var passport = require("passport");
 var LocalStratergy = require("passport-local");
 var session = require("express-session");
 var Photograph = require("./models/photographs");
+
 //const photographs = require("./models/photographs");
 //var Comment = require("./models/comments");
 //var User = require("./models/user");
@@ -52,8 +53,21 @@ app.post("/photographs", function(req, res) {
     res.redirect("/photographs");
 });
 
+app.get("/photographs/:id", function(req, res) {
+    var photoid = req.params.id;
+    Photograph.findById(photoid, function(err, photo) {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.render("photodetails", { photo: photo });
+        }
+    });
+
+});
+
 app.get("/*", function(req, res) {
-    res.send("Error 404 - File not found");
+    res.sendStatus(404);
 });
 
 app.listen(8080, "127.0.0.1", function() {
