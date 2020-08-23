@@ -34,6 +34,7 @@ app.get("/photographs", function(req, res) {
     Photograph.find({}, function(err, photographs) {
         if (err) {
             console.log(err);
+            res.status(500).send();
         } else {
             res.render("photographs", { photographs: photographs });
         }
@@ -58,7 +59,7 @@ app.get("/photographs/:id", function(req, res) {
     Photograph.findById(photoid, function(err, photo) {
         if (err) {
             console.log(err);
-            res.sendStatus(500);
+            res.status(500).send();
         } else {
             res.render("photodetails", { photo: photo });
         }
@@ -67,7 +68,7 @@ app.get("/photographs/:id", function(req, res) {
 });
 
 app.get("/*", function(req, res) {
-    res.sendStatus(404);
+    res.status(404).send();
 });
 
 app.listen(8080, "127.0.0.1", function() {
