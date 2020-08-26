@@ -9,7 +9,6 @@ var LocalStratergy = require("passport-local");
 var session = require("express-session");
 var Photograph = require("./models/photographs");
 
-//const photographs = require("./models/photographs");
 //var Comment = require("./models/comments");
 //var User = require("./models/user");
 //var flash = require('connect-flash');
@@ -59,12 +58,43 @@ app.get("/photographs/:id", function(req, res) {
     Photograph.findById(photoid, function(err, photo) {
         if (err) {
             console.log(err);
-            res.status(500).send();
+            res.status(404).send();
         } else {
             res.render("photodetails", { photo: photo });
         }
     });
 
+});
+
+
+app.get("/photographs/:id/edit", function(req, res) {
+    var id = req.params.id;
+    Photograph.findById(id, function(err, photo) {
+        if (err) {
+            console.log(err);
+            res.status(404).send();
+        } else {
+            res.render("photograph-edit", { photo: photo });
+        }
+    });
+
+});
+
+app.post("/photographs/:id", function(req, res) {
+    var id = req.params.id;
+    var name = req.body.name;
+    var img = req.body.image;
+    var descrip = req.body.descrip;
+    var author = req.params.id;
+    var object = { name: name, img: img, descrip: descrip, author: author }
+    Photograph.findByIdAndUpdate(id, object, function(err, updated) {
+        if (err) {
+            console.log(err);
+            res.status(500).send();
+        } else {
+            res.redirect("/photographs/" + id);
+        }
+    });
 });
 
 app.get("/*", function(req, res) {
