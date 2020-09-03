@@ -32,6 +32,9 @@ app.get("/home", function(req, res) {
 app.get("/about", function(req, res) {
     res.render("about");
 });
+app.get("/support", function(req, res) {
+    res.render("support");
+});
 app.get("/photographs", function(req, res) {
     Photograph.find({}, function(err, photographs) {
         if (err) {
