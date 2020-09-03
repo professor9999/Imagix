@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About Us</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Imagix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        .bg-image {
+          background-image: url(https://images.unsplash.com/photo-1481740586420-804cc4418700?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
+          filter: blur(8px);
+          -webkit-filter: blur(8px);
+          height: 100%; 
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+        /* Position text in the middle of the page/image */
+        .bg-text {
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+          color: white;
+          font-weight: bold;
+          border: 3px solid #f1f1f1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          width: 50%;
+          padding: 20px;
+          text-align: center;
+        }
+        .flex-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        .flex-container > div {
+          background-color: #f1f1f1;
+          margin: 10px;
+          padding: 20px;
+          font-size: 30px;
+        }
+        .title {
+          color: grey;
+        }
+
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        .button:hover {
+          background-color: #555;
+        }
+        .profile{
+          opacity: 0.5;
+          color: black;
+        }
+        .profile p{
+          color: black;
+        }
+        .profile img{
+          height: 100px;
+        } 
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Imagix <span class="sr-only">(current)</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/photographs">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Support</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signin">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+      <h2>About Us</h2>
+      <div class="flex-container">
+        <div class="profile">
+            <img src="/images/Kushal.png" alt="Kushal">
+            <h3>Kushal Jain</h3>
+            <p class="title">Mern Stack Developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>john@example.com</p>
+            <p><button class="button">Contact</button></p>
+        </div>
+        <div class="profile">
+          <img src="/images/Vatsal.png" alt="Vatsal">
+          <h3>Vatsal Gupta</h3>
+          <p class="title">Software Engineer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>john@example.com</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+         
+      </div>
+    </div>
+  
+  </body>
+</html>
