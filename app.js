@@ -8,6 +8,7 @@ var passport = require("passport");
 var LocalStratergy = require("passport-local");
 var session = require("express-session");
 var Photograph = require("./models/photographs");
+var Signin = require("./models/signin")
 
 //var Comment = require("./models/comments");
 //var User = require("./models/user");
@@ -44,6 +45,9 @@ app.get("/photographs", function(req, res) {
 });
 app.get("/photographs/new", function(req, res) {
     res.render("form");
+});
+app.get("/signin", function(req, res) {
+    res.render("signin");
 });
 
 app.post("/photographs", function(req, res) {

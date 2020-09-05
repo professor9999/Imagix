@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="/stylesheets/signin.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
@@ -39,7 +39,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/signin">Sign In</a>
                     </li>
                     <li class="nav-item">
@@ -52,28 +52,55 @@
     </nav>
 
     <div class="bg-text">
-        <h4>About Us</h4>
+        <h2>Login or Signup</h2>
         <div class="flex-container">
             <div class="profile">
-                <img src="/images/Kushal.png" alt="Kushal">
-                <h5>Kushal Jain</h5>
-                <p class="title">FullStack Stack Developer</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>kushal@gmail.com</p>
+                <h3>Sign Up</h3>
+                <form action="#" onsubmit="">
 
+                    <label>Name: </label>
+                    <input type="text" name="" id="first">
+                    <span id="first1"></span><br>
+        
+                    <label>Email: </label>
+                    <input type="email" name="" id="mail">
+                    <span id="mail1"></span><br>
+        
+                    <label>Date of Birth: </label>
+                    <input type="date" name="" id="dob">
+                    <span id="dob1"></span><br>
+        
+                    <label>Age: </label>
+                    <!-- <input type="text" name="" id="age"> -->
+                    <span id="age1"></span><br>
+        
+                    <label style="display: block;">Gender:</label>
+                    <input type="radio" class="radio">
+                    <label for="male">Male</label><br>
+                    <input type="radio" class="radio">
+                    <label for="female">Female</label><br>
+                    <input type="radio" class="radio">
+                    <label for="other">Other</label><br>
+        
+                    <button>Sign Up</button>
+                </form>
             </div>
             <div class="profile">
-                <img src="/images/Vatsal.png" alt="Vatsal">
-                <h5>Vatsal Gupta</h5>
-                <p class="title">Software Engineer</p><br>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>vatsal@gmail.com</p>
-
+                <h3>Login
+                    <br><img src="/images/Kushal.png" alt="Kushal"><br>
+                </h3>
+                
+                    <label>Username: </label>
+                    <input type="text" name="" id="first"><br>
+   
+                    <label>Password: </label>
+                    <input type="email" name="" id="mail"><br>
+                    <button>Login</button>
             </div>
 
         </div>
     </div>
-
+    <!-- <script src='models/signin.js'></script> -->
 </body>
 
 </html>
