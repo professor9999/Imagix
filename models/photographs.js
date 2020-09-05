@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var photoSchema = new mongoose.Schema({
     name: String,
-    img: Buffer,
+    img: String,
     descrip: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
