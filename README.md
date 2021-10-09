@@ -5,8 +5,12 @@ Variety of campsites that can be visited and reviewed by public
 ## Installation
 
 Download the entire project and run app.js file by hosting it on a server to access the requisite webpage
-Commands:
-a) 
+
+Terminal commands to be run on appropriate directory:
+a) npm install
+b) node app.js
+
+Enter localhost:8080 into URL of any of the browsers 
 
 ## Frameworks
 
