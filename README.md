@@ -5,8 +5,10 @@ Variety of campsites that can be visited and reviewed by public
 ## Installation
 
 Download the entire project and run app.js file by hosting it on a server to access the requisite webpage
+Commands:
+a) 
 
-## Framworks
+## Frameworks
 
 FrontEnd - Semantic UI, Bootstrap, Font Awesome
 BackEnd - Express JS (Node JS was used as runtime environment along with a variety of libraries)
@@ -14,7 +16,6 @@ BackEnd - Express JS (Node JS was used as runtime environment along with a varie
 ## Usage
 
 MongoDB, which is a noSQL database is used in this project.
-
 This website can be hosted on any server and it also follows RESTful routing.
 
 
