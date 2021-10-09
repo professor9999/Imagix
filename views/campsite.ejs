@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Imagix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/campsite.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background:#141212">
+        <a class="navbar-brand" href="/">Imagix</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/campgrounds">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Support</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <% if(!(currentUser)) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signin">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <% } else { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Signed In as: <%= currentUser.username %>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                            <% } %>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <% if(message && message.length>0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= message %>
+        </div>
+        <% } %>
+            <% if(message2 && message2.length>0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= message2 %>
+                </div>
+                <% } %>
+                    <row>
+                        <h1>
+                            <%=camp.name %>
+                        </h1>
+                        <div class="col-md-3">
+                            <p class="lead">Welcome to Imagix</p>
+                            <div class="list-group">
+                                <li class="list-group-item active">Info 1</li>
+                                <li class="list-group-item">Info 2</li>
+                                <li class="list-group-item">Info 3</li>
+                            </div>
+                        </div>
+                        <div class="col-md-8 container">
+                            <div class="camp-img">
+                                <img src="<%=camp.img%>">
+                            </div>
+                            <p>
+                                <%=camp.descrip%>
+                            </p>
+                            <div class="buttons">
+                                <% if(currentUser && currentUser._id==String(camp.author.id)){ %>
+                                    <form action="/campgrounds/<%=camp._id%>/delete" method="POST">
+                                        <button class="btn btn-danger">Delete Post</button>
+                                    </form>
+                                    <a class="btn btn-warning" href="/campgrounds/<%=camp._id%>/edit"> Edit Post</a>
+                                    <% } %>
+                            </div>
+                            <p id="author">
+                                Submitted by:
+                                <%=camp.author.username %>
+                            </p>
+
+                            <hr>
+
+                            <div class="container comment-container">
+                                <div class="text-right">
+                                    <a class="btn btn-success pull-right" href="/campgrounds/<%= camp._id %>/comments/new">Leave a review</a>
+                                </div>
+                                <%camp.comments.forEach( function(comment){%>
+                                    <div class="comment">
+                                        <p class="comment-main">
+                                            <strong><%=comment.author.username%></strong>
+                                            <% var x=new Date %>
+                                                <span><% if(x.getHours()>12){ %>
+                                                    <%= x.getHours()-12 %>:<%= x.getMinutes() %> p.m.
+                                                <%} else{ %>
+                                                    <%= x.getHours() %>:<%= x.getMinutes() %> a.m.
+                                                <% } %>
+                                                , <%= x.getDate() %>-<%= x.getMonth() %>-<%= x.getFullYear() %></span>
+                                                <br>
+                                                <%=comment.text%>
+                                                    <div>
+                                                        <% if(currentUser && comment.author.id==String(currentUser._id)){ %>
+                                                            <a class="comment-edit btn btn-warning btn-xs" href="/campgrounds/<%= camp._id %>/comments/<%= comment._id %>/edit"> edit</a>
+                                                            <form action="/campgrounds/<%= camp._id %>/comments/<%= comment._id%>/delete" method="POST">
+                                                                <button class="comment-delete btn btn-danger btn-xs">delete</button>
+                                                            </form>
+                                                            <% } %>
+                                                    </div>
+                                        </p>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                            <div>
+
+                            </div>
+                            <a style="font-size:14px" href="/campgrounds">Go back</a>
+                            <br>
+                            <br>
+                        </div>
+                    </row>
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+                    <script src="/campsite.js"></script>
+</body>
+
+</html>

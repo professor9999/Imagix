@@ -4,7 +4,8 @@
 <head>
     <title>Imagix</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/campground.css">
 </head>
 
 <body>
@@ -54,25 +55,47 @@
         </div>
     </nav>
 
-
     <% if(message && message.length>0){ %>
-        <div class="alert alert-danger " role="alert ">
+        <div class="alert alert-danger" role="alert">
             <%= message %>
         </div>
         <% } %>
-            <% if(message2 && message2.length>0){ %>
-                <div class="alert alert-success " role="alert ">
-                    <%= message2 %>
-                </div>
-                <% } %>
-                    <div class="container ">
-                        <h1>Welcome to the world of freelance photography</h1>
-                        <p>All of this information has been contributed by freelancers around the world</p>
-                        <a class="btn btn-primary " href="campgrounds ">Go to photos page</a>
+            <div class="container">
+                <div class="jumbotron">
+                    <div>
+                        <h2><i class="fas fa-camera"></i> Carpe Diem</h2>
+                        <p>Photography is just another art where an artist puts his thoughts and imaginations on a canvas using his creativity. Hence, photography may not show what reality is, it shows how photographer sees the world or he wants us to see
+                            the world</p>
                     </div>
-                    <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
-                    <script src="/home.js"></script>
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "></script>
+                    <a class="btn btn-primary" href="/campgrounds/new"> Add photograph</a>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <% for(var i=0;i<campgrounds.length;i++){ %>
+                            <div class="col-md-4 col-sm-6 text-center">
+                                <div class="thumbnail" id="sites">
+                                    <div class="camp-images">
+                                        <img src="<%= campgrounds[i].img %>">
+                                    </div>
+                                    <div class="caption">
+                                        <%= campgrounds[i].name %>
+                                    </div>
+                                    <p>
+                                        <a class="btn btn-sm btn-primary" href="campgrounds/<%=campgrounds[i]._id %>">More Info</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <%    } %>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>Imagix - 2020</p>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

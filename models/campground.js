@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var photoSchema = new mongoose.Schema({
+var campSchema = new mongoose.Schema({
     name: String,
     img: String,
     descrip: String,
@@ -13,8 +13,8 @@ var photoSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-
+        username: String
     }
 
 });
-module.exports = mongoose.model("Photograph", photoSchema);
+module.exports = mongoose.model("Campground", campSchema);

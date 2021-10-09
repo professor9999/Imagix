@@ -1,0 +1,21 @@
+body{
+    background: #f0f0f0;   
+}
+.navbar{
+    background:#141212;
+}
+
+#form{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+background:white;
+margin:20px auto;
+padding:10px;
+text-align:center;
+}
+input{
+    border-radius:0.5px;
+    width:50%;
+}
+#description{
+    height:20%;
+}
