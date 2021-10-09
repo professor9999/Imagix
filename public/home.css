@@ -3,7 +3,6 @@
 }
 
 body {
-    background-image: url(https://images.unsplash.com/photo-1481740586420-804cc4418700?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -28,11 +27,8 @@ p {
 
 .btn {
     margin-top: 20px;
-    margin-left: 45%;
-    padding: 6px 12px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    margin-left: 41.5%;
+    margin-right: 10%;
 }
 
 .alert {
